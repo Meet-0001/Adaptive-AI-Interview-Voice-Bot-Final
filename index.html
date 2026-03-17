@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InterviewMentor — AI-Powered Interview Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+
+<!-- ═══════════════ LANDING PAGE ═══════════════ -->
+<div id="landing-page">
+
+  <nav class="navbar">
+    <a class="logo" href="#">
+      <span class="logo-icon">▶</span>
+      <span class="logo-text">InterviewMentor</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features"     onclick="scrollTo('features')">Features</a>
+      <a href="#how-it-works" onclick="scrollTo('how-it-works')">How it works</a>
+      <a href="#tech-stack"   onclick="scrollTo('tech-stack')">Tech Stack</a>
+    </div>
+    <button class="btn-launch" onclick="launchApp()">Launch App</button>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      AI-Powered · Voice-Enabled · 100% Local
+    </div>
+    <h1 class="hero-title">
+      Ace your next interview<br />
+      <span class="hero-accent">with an AI mentor</span>
+    </h1>
+    <p class="hero-sub">
+      Practice mock interviews with real-time voice interaction. Powered by Ollama locally,
+      with Whisper STT and Edge TTS for a natural coaching experience.
+    </p>
+    <div class="hero-cta">
+      <button class="btn-launch lg" onclick="launchApp()">Start Practicing →</button>
+      <a class="btn-outline lg" onclick="smoothScroll('how-it-works')">See How It Works</a>
+    </div>
+
+    <!-- Terminal mockup -->
+    <div class="terminal">
+      <div class="terminal-bar">
+        <span class="t-dot red"></span>
+        <span class="t-dot yellow"></span>
+        <span class="t-dot tgreen"></span>
+        <span class="t-title">InterviewMentor — AI Coach</span>
+      </div>
+      <div class="terminal-body">
+        <div class="t-line"><span class="t-dim">Session started for:</span> <span class="t-green">Senior Frontend Engineer</span></div>
+        <div class="t-line"><span class="t-green">[MENTOR]</span> <span class="t-white">Tell me about yourself and why you're interested in this role.</span></div>
+        <div class="t-line"><span class="t-blue">[YOU]</span> <span class="t-white">I've been building React apps for 4 years…</span></div>
+        <div class="t-line"><span class="t-green">[MENTOR]</span> <span class="t-white">Great start! ✓ Clear background. → Next time add a specific impact metric.</span></div>
+        <div class="t-line"><span class="t-green">[SCORE]</span> <span class="t-white">Relevance: 8/10 · Clarity: 7/10 · Depth: 6/10 · Overall: 7/10</span></div>
+        <div class="t-line"><span class="cursor-block"></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="land-section" id="features">
+    <h2 class="section-title">Everything you need to prepare</h2>
+    <p class="section-sub">A complete interview coaching system that runs entirely on your machine.</p>
+    <div class="features-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🎤</div>
+        <h3>Voice Interview</h3>
+        <p>Speak your answers naturally. Whisper transcribes your speech in real-time for a realistic interview simulation.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔊</div>
+        <h3>AI Voice Coach</h3>
+        <p>Hear your mentor speak via Edge TTS with a natural male voice — Guy Neural. Like having a real coach by your side.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🧠</div>
+        <h3>Local AI (Ollama)</h3>
+        <p>Powered by Llama 3.2 running locally via Ollama. 100% private — your interview data never leaves your machine.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🎯</div>
+        <h3>4 Difficulty Levels</h3>
+        <p>Choose from Very Easy, Easy, Medium, or Difficult. The AI adapts question complexity and evaluation depth accordingly.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🗃️</div>
+        <h3>Smart History</h3>
+        <p>SQLite stores your last 10 interview sessions. Older sessions auto-delete to keep things clean.</p>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⭐</div>
+        <h3>Detailed Scoring</h3>
+        <p>Get scores on Relevance, Clarity, and Depth after every answer — plus strengths, weaknesses, and actionable feedback.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <div class="dark-band" id="how-it-works">
+    <div class="land-section" style="padding-top:4rem;padding-bottom:4rem">
+      <h2 class="section-title">How it works</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">01</div>
+          <h3>Choose Your Role</h3>
+          <p>Select the job role you're targeting — frontend, backend, product, data science, and more.</p>
+          <div class="step-arrow-right">→</div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <h3>Set Difficulty</h3>
+          <p>Pick Very Easy, Easy, Medium, or Difficult. The AI adapts question depth accordingly.</p>
+          <div class="step-arrow-right">→</div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <h3>Practice with Voice</h3>
+          <p>Click the mic, answer out loud. Whisper transcribes, Ollama evaluates, Edge TTS responds.</p>
+          <div class="step-arrow-right">→</div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <h3>Get Feedback</h3>
+          <p>Receive strengths, weaknesses, and structured coaching after every answer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <section class="land-section" id="tech-stack">
+    <h2 class="section-title">Tech Stack</h2>
+    <p class="section-sub">Built with powerful open-source tools — no cloud, no subscriptions.</p>
+    <div class="stack-grid">
+      <div class="stack-card"><div class="stack-logo">🐍</div><div class="stack-name">Flask</div><div class="stack-desc">Python backend</div></div>
+      <div class="stack-card"><div class="stack-logo">🦙</div><div class="stack-name">Ollama</div><div class="stack-desc">Local LLM (Llama 3.2)</div></div>
+      <div class="stack-card"><div class="stack-logo">🎙️</div><div class="stack-name">Whisper</div><div class="stack-desc">OpenAI STT model</div></div>
+      <div class="stack-card"><div class="stack-logo">🔊</div><div class="stack-name">Edge TTS</div><div class="stack-desc">Guy Neural voice</div></div>
+      <div class="stack-card"><div class="stack-logo">🗄️</div><div class="stack-name">SQLite</div><div class="stack-desc">Local session history</div></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-logo"><span class="logo-icon">▶</span> InterviewMentor</div>
+    <p class="footer-sub">100% local · open source · no data leaves your machine</p>
+  </footer>
+
+</div><!-- /#landing-page -->
+
+
+<!-- ═══════════════ APP PAGE ═══════════════ -->
+<div id="app-page" style="display:none">
+
+  <nav class="navbar app-navbar">
+    <a class="logo" href="#" onclick="exitApp(); return false;">
+      <span class="logo-icon">▶</span>
+      <span class="logo-text">InterviewMentor</span>
+    </a>
+    <div class="nav-links" style="gap:1.5rem">
+      <!-- Service status dots -->
+      <div class="svc-status">
+        <div class="svc-item" id="svc-ollama">
+          <span class="glow-dot gray" id="glow-ollama"></span>
+          <span class="svc-label">Ollama</span>
+        </div>
+        <div class="svc-item" id="svc-whisper">
+          <span class="glow-dot gray" id="glow-whisper"></span>
+          <span class="svc-label">Whisper</span>
+        </div>
+        <div class="svc-item" id="svc-tts">
+          <span class="glow-dot gray" id="glow-tts"></span>
+          <span class="svc-label">Edge TTS</span>
+        </div>
+      </div>
+    </div>
+    <button class="btn-outline sm" onclick="exitApp()">← Back</button>
+  </nav>
+
+  <div class="app-body">
+
+    <!-- ── SETUP ── -->
+    <section id="sec-setup" class="active">
+      <div class="app-header">
+        <h2>Configure your session</h2>
+        <p class="app-header-sub">Choose your role, difficulty, and question preferences</p>
+      </div>
+
+      <div class="card">
+        <div class="section-label">Choose your role</div>
+        <div class="role-grid">
+          <button class="role-btn" data-role="Software Engineer"><span class="ri">💻</span>Software Engineer</button>
+          <button class="role-btn" data-role="Product Manager"><span class="ri">📋</span>Product Manager</button>
+          <button class="role-btn" data-role="Data Scientist"><span class="ri">📊</span>Data Scientist</button>
+          <button class="role-btn" data-role="UX Designer"><span class="ri">🎨</span>UX Designer</button>
+          <button class="role-btn" data-role="Marketing Manager"><span class="ri">📣</span>Marketing Manager</button>
+          <button class="role-btn" data-role="Sales Executive"><span class="ri">🤝</span>Sales Executive</button>
+          <button class="role-btn" data-role="Finance Analyst"><span class="ri">💹</span>Finance Analyst</button>
+          <button class="role-btn" data-role="HR Manager"><span class="ri">🧑‍💼</span>HR Manager</button>
+        </div>
+
+        <div class="setup-grid">
+          <div class="field">
+            <label>Custom role</label>
+            <input type="text" id="custom-role" placeholder="e.g. DevOps Engineer" />
+          </div>
+          <div class="field">
+            <label>Ollama model</label>
+            <select id="model-select"><option value="llama3.2">llama3.2</option></select>
+          </div>
+        </div>
+
+        <div class="section-label">Difficulty level</div>
+        <div class="diff-grid">
+          <button class="diff-btn" data-diff="very_easy"><span class="diff-icon">🟢</span><span class="diff-name">Very Easy</span><span class="diff-desc">Basic concepts</span></button>
+          <button class="diff-btn" data-diff="easy"><span class="diff-icon">🔵</span><span class="diff-name">Easy</span><span class="diff-desc">Entry level</span></button>
+          <button class="diff-btn selected" data-diff="medium"><span class="diff-icon">🟡</span><span class="diff-name">Medium</span><span class="diff-desc">Mid level</span></button>
+          <button class="diff-btn" data-diff="difficult"><span class="diff-icon">🔴</span><span class="diff-name">Difficult</span><span class="diff-desc">Senior depth</span></button>
+        </div>
+
+        <div class="setup-grid">
+          <div class="field">
+            <label>Experience</label>
+            <select id="experience">
+              <option value="entry">Entry (0–2 yrs)</option>
+              <option value="mid" selected>Mid (2–5 yrs)</option>
+              <option value="senior">Senior (5–10 yrs)</option>
+              <option value="lead">Lead / Principal</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Questions</label>
+            <select id="q-count">
+              <option value="3">3 — Quick</option>
+              <option value="5" selected>5 — Standard</option>
+              <option value="8">8 — Thorough</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="section-label">Question types</div>
+        <div class="type-grid">
+          <button class="type-btn selected" data-type="behavioral">Behavioral</button>
+          <button class="type-btn selected" data-type="technical">Technical</button>
+          <button class="type-btn selected" data-type="situational">Situational</button>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn-ghost" id="history-btn">📋 History</button>
+          <button class="btn-launch" id="start-btn">Start Interview →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── LOADING ── -->
+    <section id="sec-loading">
+      <div class="loading-center">
+        <div class="spinner"></div>
+        <div class="loading-title">Generating questions…</div>
+        <div class="loading-sub" id="loading-sub">Asking Ollama to craft your interview</div>
+      </div>
+    </section>
+
+    <!-- ── INTERVIEW ── -->
+    <section id="sec-interview">
+      <div class="progress-wrap"><div class="progress-bar" id="progress-bar"></div></div>
+      <div class="interview-header">
+        <div class="q-counter" id="q-counter">Question 1 of 5</div>
+        <div class="nav-dots" id="nav-dots"></div>
+        <div class="timer" id="timer"></div>
+      </div>
+
+      <div class="card">
+        <div class="q-top">
+          <span class="q-badge" id="q-badge">Behavioral</span>
+          <button class="tts-btn" id="tts-btn" title="Read question aloud">🔊 Listen</button>
+        </div>
+        <div class="question-text" id="question-text">Loading…</div>
+
+        <div class="hint-box" id="hint-box" style="display:none">
+          <div class="hint-label">💡 Coaching Hint</div>
+          <div id="hint-text"></div>
+        </div>
+
+        <div class="answer-label">Your Answer</div>
+        <textarea id="answer-input" placeholder="Type your answer here, or click the mic to speak your answer…"></textarea>
+
+        <div class="voice-row">
+          <button class="mic-btn" id="mic-btn" title="Record answer">🎤</button>
+          <div class="mic-status" id="mic-status">Click mic to record</div>
+          <div class="action-btns">
+            <button class="btn-ghost sm" id="hint-btn">💡 Hint</button>
+            <button class="btn-ghost sm" id="skip-btn">Skip →</button>
+            <button class="btn-launch sm" id="submit-btn">Submit Answer</button>
+          </div>
+        </div>
+
+        <!-- Feedback panel -->
+        <div class="feedback-section" id="feedback-section" style="display:none">
+          <div class="feedback-title-row">
+            <span class="feedback-heading">AI Feedback</span>
+            <div class="overall-badge" id="overall-badge"></div>
+          </div>
+
+          <!-- Score breakdown cards -->
+          <div class="score-cards" id="score-cards"></div>
+
+          <!-- Strengths / Weaknesses -->
+          <div class="sw-grid" id="sw-grid" style="display:none">
+            <div class="sw-box strength-box">
+              <div class="sw-label">✅ Strength</div>
+              <div class="sw-text" id="strength-text"></div>
+            </div>
+            <div class="sw-box weakness-box">
+              <div class="sw-label">⚠️ Improve</div>
+              <div class="sw-text" id="improve-text"></div>
+            </div>
+          </div>
+
+          <!-- Detailed feedback -->
+          <div class="feedback-bubble" id="feedback-bubble">
+            <div class="fb-avatar">AI</div>
+            <div class="fb-content" id="feedback-text"></div>
+          </div>
+
+          <div style="text-align:right;margin-top:1rem">
+            <button class="btn-launch sm" id="next-btn">Next Question →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── RESULTS ── -->
+    <section id="sec-results">
+      <div class="results-header">
+        <div class="trophy" id="trophy">🏆</div>
+        <h2 id="results-title">Session Complete</h2>
+        <p class="app-header-sub" id="results-sub"></p>
+      </div>
+
+      <div class="overall-card">
+        <div class="score-circle-big">
+          <svg viewBox="0 0 100 100" class="score-ring">
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#1a1e2a" stroke-width="8"/>
+            <circle cx="50" cy="50" r="42" fill="none" stroke="#22c55e" stroke-width="8"
+              stroke-dasharray="263.9" stroke-dashoffset="263.9"
+              stroke-linecap="round" id="ring-circle" style="transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset 1.2s ease"/>
+          </svg>
+          <div class="score-inner">
+            <div class="score-num" id="final-score">–</div>
+            <div class="score-lbl">/ 10</div>
+          </div>
+        </div>
+        <div class="breakdown" id="breakdown"></div>
+      </div>
+
+      <div id="results-list"></div>
+
+      <div class="btn-row" style="margin-top:1.5rem">
+        <button class="btn-ghost" id="history-btn2">📋 History</button>
+        <button class="btn-launch" id="restart-btn">New Session →</button>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- History overlay -->
+<div class="overlay" id="history-overlay" style="display:none">
+  <div class="overlay-panel">
+    <div class="overlay-header">
+      <span>Past Sessions</span>
+      <button class="close-btn" id="close-history">✕</button>
+    </div>
+    <div class="history-meta" id="history-meta"></div>
+    <div id="history-list"></div>
+  </div>
+</div>
+
+<script src="/static/js/app.js"></script>
+</body>
+</html>

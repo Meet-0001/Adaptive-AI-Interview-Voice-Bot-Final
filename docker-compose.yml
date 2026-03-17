@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  ollama:
+    image: ollama/ollama
+    container_name: ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+
+  interview-app:
+    build: .
+    container_name: interview-mentor
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./db:/app/db
+    depends_on:
+      - ollama
+    environment:
+      - OLLAMA_URL=http://ollama:11434/api/chat
+      - OLLAMA_TAGS=http://ollama:11434/api/tags
+    restart: unless-stopped
+
+volumes:
+  ollama_data:
