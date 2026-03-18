@@ -70,13 +70,21 @@ def get_whisper():
 
 # ── Edge TTS ─────────────────────────────────────────────
 def _tts_sync(text: str, path: str):
-    import edge_tts
-    async def _inner():
-        comm = edge_tts.Communicate(text, TTS_VOICE)
-        await comm.save(path)
-    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
-        pool.submit(asyncio.run, _inner()).result()
-
+    tts_server = os.environ.get("TTS_SERVER", "")
+    if tts_server:
+        resp = requests.post(tts_server, json={"text": text, "voice": TTS_VOICE}, timeout=30)
+        with open(path, "wb") as f:
+            f.write(resp.content)
+    else:
+        async def _inner():
+            comm = edge_tts.Communicate(text, TTS_VOICE)
+            await comm.save(path)
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        try:
+            loop.run_until_complete(_inner())
+        finally:
+            loop.close()
 
 # ── Ollama ───────────────────────────────────────────────
 def call_ollama(prompt: str, model: str = DEFAULT_MODEL) -> str:
@@ -348,7 +356,7 @@ def health():
     tts_ok     = False
 
     try:
-        requests.get("http://localhost:11434", timeout=2)
+        requests.get("http://ollama:11434", timeout=2)
         ollama_ok = True
     except: pass
 
